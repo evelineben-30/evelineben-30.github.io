@@ -1,0 +1,36 @@
+html{ 
+    background-color: slateblue ;
+}
+
+*{
+    border: solid 1px white;
+}
+
+main{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5rem;
+}
+
+.titulo h1{
+    color: lightcoral;
+    font-family: "Fjalla One", sans-serif;
+}
+
+
+.nav a{
+    color: yellow;
+    text-decoration: none;
+    background-color: rosybrown;
+    display: inline;
+    margin: 0.5rem;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+}
