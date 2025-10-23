@@ -1,9 +1,9 @@
 html{ 
-    background-color: slateblue ;
+    background-color: rgb(199, 159, 255) ;
 }
 
 *{
-    border: solid 1px white;
+    *border: solid 1px white;
 }
 
 main{
@@ -12,25 +12,37 @@ main{
     align-items: center;
     flex-direction: column;
     padding-top: 5rem;
+    gap: 2rem;
 }
 
 .titulo h1{
-    color: lightcoral;
+    color: rgb(182, 61, 124);
     font-family: "Fjalla One", sans-serif;
 }
 
-
 .nav a{
-    color: yellow;
+    color: rgb(188, 27, 129);
     text-decoration: none;
-    background-color: rosybrown;
-    display: inline;
-    margin: 0.5rem;
+    background-color: rgb(229, 185, 255);
+    padding: 1rem;
+    display: inline block;
+    margin: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: solid 1px rgb(151, 81, 255);
+    transition: all 0.3s easeas-in-out;
+    margin-block: 0.5rem;
 }
 
+li a:hover{
+    background-color: rgb(182, 61, 124);
+    color: white;
+    transform: scale(1.1)rotate(1deg)
+}
 .nav ul{
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding: 1px;
+    padding: 1rem;
+    border-radius: 1rem;
 }
