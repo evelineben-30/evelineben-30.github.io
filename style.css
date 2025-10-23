@@ -25,7 +25,7 @@ main{
     text-decoration: none;
     background-color: rgb(229, 185, 255);
     padding: 1rem;
-    display: inline block;
+    display: inline-block;
     margin: 1rem;
     margin: 1rem;
     border-radius: 5px;
@@ -37,7 +37,8 @@ main{
 li a:hover{
     background-color: rgb(182, 61, 124);
     color: white;
-    transform: scale(1.1)rotate(1deg)
+    transform: scale(1.1)rotate(1deg);
+
 }
 .nav ul{
     list-style: none;
