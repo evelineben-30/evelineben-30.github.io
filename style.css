@@ -1,18 +1,86 @@
-html{ 
-    background: linear-gradient(120deg, #fe9cc0, #dca4ff, #dfb5ff, #94d9fe);
-    background-size: 300% 300%;
-    animation: movimiento 8s ease infinite;
+html {
+      background: linear-gradient(120deg, #002c83,#56005b, #00564f, #8b0092);
+  background-size: 300% 300%;
+  animation: movimiento 12s ease-in-out infinite;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 @keyframes movimiento {
-  0% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 60%; }
+  100% { background-position: 0% 50%; }
+}
+
+html::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.20) 0, transparent 45%),
+        radial-gradient(circle at 75% 25%, rgba(255,200,255,0.18) 0, transparent 50%),
+        radial-gradient(circle at 30% 75%, rgba(200,200,255,0.18) 0, transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(255,230,255,0.16) 0, transparent 50%);
+
+    filter: blur(25px);
+    opacity: 0.9;
+
+    animation: bokehMove 18s ease-in-out infinite alternate;
+}
+
+/* Movimiento lento y suave del bokeh */
+@keyframes bokehMove {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(40px, -20px) scale(1.1);
+    }
 }
 
 *{
     *border: solid 1px white;
 }
+
+/* 🟪🟩 CUADRADOS DE LUZ FLOTANTES */
+.cuadros-luz {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Cada cuadrado */
+.cuadros-luz div {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: rgba(255, 0, 255, 0.18);
+    filter: blur(35px);
+    border-radius: 12px;
+    animation: flotar 16s infinite ease-in-out alternate;
+    mix-blend-mode: screen;
+}
+
+/* Variantes de color */
+.cuadros-luz .c1 { background: rgba(255, 0, 200, 0.22); top: 10%; left: 15%; animation-delay: 0s; }
+.cuadros-luz .c2 { background: rgba(0, 180, 255, 0.20); top: 60%; left: 70%; animation-delay: 3s; }
+.cuadros-luz .c3 { background: rgba(255, 255, 0, 0.18); top: 70%; left: 5%; animation-delay: 6s; }
+.cuadros-luz .c4 { background: rgba(0, 255, 150, 0.18); top: 25%; left: 80%; animation-delay: 2s; }
+.cuadros-luz .c5 { background: rgba(200, 0, 255, 0.22); top: 40%; left: 40%; animation-delay: 1.2s; }
+
+/* Movimiento suave */
+@keyframes flotar {
+    0%   { transform: translateY(0px) translateX(0px) scale(1);    opacity: 0.6; }
+    50%  { transform: translateY(-35px) translateX(25px) scale(1.1); opacity: 0.9; }
+    100% { transform: translateY(40px) translateX(-20px) scale(1);   opacity: 0.7; }
+}
+
 
 main{
     display: flex;
@@ -24,7 +92,7 @@ main{
 }
 
 .titulo h1{
-    color: rgb(182, 61, 124);
+    color: rgb(255, 255, 255);
     font-family: "Delius Swash Caps", cursive;
     text-align: center;
     font-size: 70px;
@@ -33,20 +101,29 @@ main{
   }
 
 .nav a{
-    color: rgb(188, 27, 129);
+    color: rgb(255, 255, 255);
     font-family: "Kavivanar", cursive;
     text-decoration: none;
-    background-color: rgb(229, 185, 255);
-    padding: 12px 30px;
-    display: block;
-    margin: 40px;
-    margin: 40px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: solid 2px rgb(151, 81, 255);
-    transition: all 0.3s easeas-in-out;
-    margin-block: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: rgb(90, 0, 142);
+   display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+
+    color: white;
+    background: rgba(255, 0, 123, 0.35);
+
+    border-radius: 14px;
+    border: 1px solid rgba(200, 0, 255, 0.6);
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 221, 0.855),
+        0 0 28px rgba(255, 0, 225, 0.5),
+        inset 0 0 18px rgba(255, 0, 183, 0.4);
+
+    backdrop-filter: blur(4px);
+    transition: 0.3s ease;
 }
 
 li a:hover{
