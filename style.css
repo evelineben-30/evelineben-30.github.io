@@ -42,10 +42,6 @@ html::before {
     }
 }
 
-*{
-    *border: solid 1px white;
-}
-
 /* 🟪🟩 CUADRADOS DE LUZ FLOTANTES */
 .cuadros-luz {
     position: fixed;
