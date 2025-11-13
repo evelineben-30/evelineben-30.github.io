@@ -1,16 +1,16 @@
 html {
-      background: linear-gradient(120deg, #002c83,#56005b, #00564f, #8b0092);
-  background-size: 300% 300%;
-  animation: movimiento 12s ease-in-out infinite;
-  min-height: 100%;
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(120deg, #002c83,#56005b, #00564f, #8b0092);
+    background-size: 300% 300%;
+    animation: movimiento 12s ease-in-out infinite;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 @keyframes movimiento {
     0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 html::before {
@@ -32,7 +32,7 @@ html::before {
     animation: bokehMove 18s ease-in-out infinite alternate;
 }
 
-/* Movimiento lento y suave del bokeh */
+
 @keyframes bokehMove {
     0% {
         transform: translate(0, 0) scale(1);
