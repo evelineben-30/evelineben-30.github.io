@@ -135,4 +135,6 @@ li a:hover{
     flex-direction: column;
     padding: 1rem;
     border-radius: 1rem;
+
+     gap: 1.5rem;
 }
